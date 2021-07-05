@@ -22,8 +22,7 @@ jobs:
 
       - name: Install
         run: |
-          yarn
-          yarn clean
+          npm i
       - name: Build
         run: |
           make -j4
