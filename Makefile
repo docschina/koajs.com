@@ -11,23 +11,23 @@ index.html: views/index.jade $(DOCS)
 	@./node_modules/.bin/pug --obj pug-options.js $< -o .
 
 public/index.md:
-	curl -s $(RAW)/koajs/koa/master/docs/api/index.md \
+	curl -s $(RAW)/docschina/koa/cn/docs/api/index.md \
 	  | ./rewrite.js > $@
 
 public/context.md:
-	curl -s $(RAW)/koajs/koa/master/docs/api/context.md \
+	curl -s $(RAW)/docschina/koa/cn/docs/api/context.md \
 	  | ./rewrite.js > $@
 
 public/request.md:
-	curl -s $(RAW)/koajs/koa/master/docs/api/request.md \
+	curl -s $(RAW)/docschina/koa/cn/docs/api/request.md \
 	  | ./rewrite.js > $@
 
 public/response.md:
-	curl -s $(RAW)/koajs/koa/master/docs/api/response.md \
+	curl -s $(RAW)/docschina/koa/cn/docs/api/response.md \
 	  | ./rewrite.js > $@
 
 public/guide.md:
-	curl -s $(RAW)/koajs/koa/master/docs/guide.md \
+	curl -s $(RAW)/docschina/koa/cn/docs/guide.md \
 	  | ./rewrite.js > $@
 
 clean:
