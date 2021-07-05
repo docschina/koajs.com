@@ -26,11 +26,7 @@ jobs:
           yarn clean
       - name: Build
         run: |
-          yarn build
-      - name: Check Build
-        run: |
-          sudo -i
-          sudo chown -R $USER ./dist
+          make -j4
       - name: Docschina Github Action
         id: deployStatic
         uses: lcxfs1991/docschina-actions@master
@@ -38,7 +34,7 @@ jobs:
           skipFiles: ${{ secrets.SKIP_FILES }}
           secretId: ${{ secrets.SECRET_ID }}
           secretKey: ${{ secrets.SECRET_KEY }}
-          staticSrcPath: ./dist
+          staticSrcPath: ./
           bucket: ${{ secrets.BUCKET }}
           region: ${{ secrets.REGION }}
           forceFiles: ${{ secrets.FORCE_FILES }}  
